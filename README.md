@@ -1,2 +1,7 @@
-# a3200-2015-algs
-Readme restored
+##### Структура каталогов:
+ - labX
+   - фамилия
+     - код
+
+
+[Страница задач](http://obolshakova.ru/students/tasks.xml)
