@@ -1,7 +1,7 @@
 __author__ = 'vks'
 
 
-def eratosphen(n):
+def sieve(n):
     primes = [True for i in range(n + 1)]
     primes[0] = False
     primes[1] = False
@@ -13,5 +13,6 @@ def eratosphen(n):
         i += 1
     return primes
 
+
 n = int(input())
-print(eratosphen(n))
+print(sieve(n))
