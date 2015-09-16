@@ -3,9 +3,10 @@
    - фамилия
      - код
 
-##### Требования к оформлению Pull request:
+##### Требования к оформлению кода:
   - в названии пул реквеста должна находиться фамилия студента русскими буквами и номер задачи
+  - код должен соблюдать [Style Guide for Python Code (PEP8)](https://www.python.org/dev/peps/pep-0008/)
+  - названия переменных, функций, файлов и сообщений коммитов должны быть содержательными
 
 [Страница задач](http://obolshakova.ru/students/tasks.xml)
 
-[Style Guide for Python Code (PEP8)](https://www.python.org/dev/peps/pep-0008/)
