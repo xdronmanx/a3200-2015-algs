@@ -4,6 +4,7 @@ first_line = stdin.readline()
 list = [int(p) for p in first_line.split(' ')]
 k = 10
 
+
 def sort_vstavkami(list):
     length = len(list)
     for i in range(1, length):
@@ -13,6 +14,7 @@ def sort_vstavkami(list):
             j -= 1
         list.insert(j + 1, key)
     return list
+
 
 def merge(leftpart, rightpart):
     list = []
@@ -27,6 +29,7 @@ def merge(leftpart, rightpart):
         list.extend(rightpart)
     return list
 
+
 def mergesort(list):
     length = len(list)
     if length >= k:
@@ -35,5 +38,6 @@ def mergesort(list):
     else:
         list = sort_vstavkami(list)
     return list
+
 
 print(mergesort(list))
