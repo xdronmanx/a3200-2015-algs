@@ -5,39 +5,40 @@ c = 0
 d = 0
 e = 0
 
-FIRST_LINE = stdin.readline()
-LIST = [int(p) for p in FIRST_LINE.split(' ')]
+first_line = stdin.readline()
+list = [int(p) for p in first_line.split(' ')]
 
 
-def QSORT(LIST, p, r):
+def QSORT(list, p, r):
     if p < r:
-        q = RANDOM_PATRITION(LIST, p, r)
-        QSORT(LIST, p, q - 1)
-        QSORT(LIST, q + 1, r)
+        q = RANDOM_PATRITION(list, p, r)
+        QSORT(list, p, q - 1)
+        QSORT(list, q + 1, r)
+    return list
 
 
-def PATRITION(LIST, p, r):
-    x = LIST[r]
+def PATRITION(list, p, r):
+    x = list[r]
     i = p - 1
     for j in range(p, r):
-        if LIST[j] <= x:
+        if list[j] < x:
             i += 1
-            d = LIST[i]
-            LIST[i] = LIST[j]
-            LIST[j] = d
-    e = LIST[i + 1]
-    LIST[i + 1] = LIST[r]
-    LIST[r] = e
+            d = list[i]
+            list[i] = list[j]
+            list[j] = d
+    e = list[i + 1]
+    list[i + 1] = list[r]
+    list[r] = e
     return i + 1
 
 
-def RANDOM_PATRITION(LIST, p, r):
+def RANDOM_PATRITION(list, p, r):
     i = random.randint(p, r)
-    c = LIST[r]
-    LIST[r] = LIST[i]
-    LIST[i] = c
-    return PATRITION(LIST, p, r)
+    c = list[r]
+    list[r] = list[i]
+    list[i] = c
+    return PATRITION(list, p, r)
 
 
-QSORT(LIST, 0, len(LIST) - 1)
-print(LIST)
+QSORT(list, 0, len(list) - 1)
+print(list)
