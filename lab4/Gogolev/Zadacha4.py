@@ -5,18 +5,18 @@ list = [int(p) for p in first_line.split(' ')]
 k = 10
 
 
-def sort_vstavkami(list):
-    length = len(list)
-    for i in range(1, length):
-        j = i - 1
-        key = list.pop(i)
-        while (j >= 0) and (list[j] > key):
-            j -= 1
-        list.insert(j + 1, key)
+def INSERTION_SORT(list):
+    for j in range(1, len(list)):
+        key = list[j]
+        i = j - 1
+        while (i >= 0) and (list[i] > key):
+            list[i+1] = list[i]
+            i = i - 1
+        list[i+1] = key
     return list
 
 
-def merge(leftpart, rightpart):
+def MERGE(leftpart, rightpart):
     list = []
     while leftpart and rightpart:
         if leftpart[0] < rightpart[0]:
@@ -30,14 +30,14 @@ def merge(leftpart, rightpart):
     return list
 
 
-def mergesort(list):
+def MERGE_SORT(list):
     length = len(list)
-    if length >= k:
+    if length >= 10:
         mid = int(length / 2)
-        list = merge(mergesort(list[:mid]), mergesort(list[mid:]))
+        list = MERGE(MERGE_SORT(list[:mid]), MERGE_SORT(list[mid:]))
     else:
-        list = sort_vstavkami(list)
+        list = INSERTION_SORT(list)
     return list
 
 
-print(mergesort(list))
+print(MERGE_SORT(list))
